@@ -7,10 +7,10 @@
 #include <cstdlib>
 #include <algorithm>
 
-template<class T>
-void push(std::list<T>& lst, T element)
+template<class Type>
+void push(std::list<Type>& lst, Type element)
 {
-    typename std::list<T>::iterator it = lst.begin();
+    typename std::list<Type>::iterator it = lst.begin();
 
     while(it != lst.end() && *it < element)
     {
@@ -21,12 +21,12 @@ void push(std::list<T>& lst, T element)
     lst.insert(it, element);
 }
 
-template<class T>
-T pop(std::list<T>& lst)
+template<class Type>
+Type pop(std::list<Type>& lst)
 {
-    typename std::list<T>::iterator iter = --lst.end();
+    typename std::list<Type>::iterator iter = --lst.end();
 
-    T returnValue = *iter;
+    Type returnValue = *iter;
     lst.erase(iter);
 
     return returnValue;
