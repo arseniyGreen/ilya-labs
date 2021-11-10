@@ -120,6 +120,8 @@ std::list<Type> filter(std::list<Type>& first, bool (*predicate)(Type))
 template<class Type>
 void printList(std::list<Type>& lst)
 {
+    std::cout << "\nList length : " << lst.size() << "\n";
+
     typename std::list<Type>::iterator iter = lst.begin();
 
     while(iter != lst.end())
@@ -144,6 +146,13 @@ int main()
     push(list, redminote10);
     push(list, honor30i);
 
+    printList(list);
+
+    std::cout << "\nPop test:";
+    Smartphone popVal = pop(list);
+    std::cout << popVal;
+
+    std::cout << "\nList after pop :";
     printList(list);
 
     return 0;
