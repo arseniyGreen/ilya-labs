@@ -1,0 +1,3 @@
+/run/media/notahacker/St Drive/Ilya_labs/1/2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/run/media/notahacker/St Drive/Ilya_labs/1/2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/run/media/notahacker/St Drive/Ilya_labs/1/2/cmake-build-debug/CMakeFiles/2.dir
