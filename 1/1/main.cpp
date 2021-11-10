@@ -1,6 +1,112 @@
-#include <iostream>
+/* Бобров Илья КТСО-02-20 */
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
+#include <iostream>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <cstdlib>
+#include <algorithm>
+
+template<class T>
+void push(std::list<T>& lst, T element)
+{
+    typename std::list<T>::iterator it = lst.begin();
+
+    while(it != lst.end() && *it < element)
+    {
+        if(*it > element) break;
+
+        *it++;
+    }
+    lst.insert(it, element);
+}
+
+template<class T>
+T pop(std::list<T>& lst)
+{
+    typename std::list<T>::iterator iter = --lst.end();
+
+    T returnValue = *iter;
+    lst.erase(iter);
+
+    return returnValue;
+}
+
+template<class Type>
+bool isPrime(Type x)
+{
+    if(x < 2) return false;
+    if(x == 2) return true;
+    if(x % 2 == 0) return false;
+    for(size_t i = 3; pow(i, 2) < x; i+=2)
+    {
+        if(x % i == 0) return false;
+    }
+    return true;
+}
+
+template<class Type>
+std::list<Type> filter(std::list<Type>& first, bool (*predicate)(Type))
+{
+    std::list<Type> toReturn;
+
+    typename std::list<Type>::iterator it = first.begin();
+    while(it != first.end())
+    {
+        if(predicate(*it)) push(toReturn, *it);
+        *it++;
+    }
+    return toReturn;
+}
+
+template<class Type>
+void printList(std::list<Type>& lst)
+{
+    typename std::list<Type>::iterator iter = lst.begin();
+
+    while(iter != lst.end())
+    {
+        std::cout << *iter << " ";
+        *iter++;
+    }
+}
+
+int main()
+{
+    srand(time(NULL));
+    std::list<int> firstList;
+
+    /* Fill list with random numbers */
+    for(size_t i = 0; i < 10; i++)
+    {
+        firstList.push_back(rand() % 100 + 1);
+    }
+
+    firstList.sort();
+
+    std::cout << "\nПервый список перед применением push : \n";
+    printList(firstList);
+
+    //Гарантируем наличие простых чисел
+    push(firstList, 5);
+    push(firstList, 3);
+    push(firstList, 13);
+    push(firstList, 23);
+
+    std::cout << "\nПосле push : \n";
+    printList(firstList);
+
+    /* Pop test */
+    int popValue = pop(firstList);
+
+    std::cout << "\nПосле pop:\n";
+    printList(firstList);
+    std::cout << "\nPop вернул : " << popValue << "\n";
+
+    /* Filter test */
+    std::list<int> secondList = filter(firstList, isPrime);
+    std::cout << "\nОтфильтрованный список: \n";
+    printList(secondList);
+
     return 0;
 }
