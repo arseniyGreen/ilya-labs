@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/run/media/notahacker/St Drive/Ilya_labs/1/3-5/cmake-build-debug"/>
+				<Option working_dir="/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/run/media/notahacker/St Drive/Ilya_labs/1/3-5/cmake-build-debug"/>
+				<Option working_dir="/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/run/media/notahacker/St Drive/Ilya_labs/1/3-5/cmake-build-debug"/>
+				<Option working_dir="/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="3_5">
-				<Option output="/run/media/notahacker/St Drive/Ilya_labs/1/3-5/cmake-build-debug/3_5" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/run/media/notahacker/St Drive/Ilya_labs/1/3-5/cmake-build-debug"/>
+				<Option output="/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/3_5" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 3_5"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 3_5"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="3_5/fast">
-				<Option output="/run/media/notahacker/St Drive/Ilya_labs/1/3-5/cmake-build-debug/3_5" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/run/media/notahacker/St Drive/Ilya_labs/1/3-5/cmake-build-debug"/>
+				<Option output="/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/3_5" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,17 +75,17 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 3_5/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/run/media/notahacker/St\ Drive/Ilya_labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 3_5/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/run/media/notahacker/St Drive/Ilya_labs/1/3-5/main.cpp">
+		<Unit filename="/home/arseniy/Documents/ilya-labs/1/3-5/main.cpp">
 			<Option target="3_5"/>
 		</Unit>
-		<Unit filename="/run/media/notahacker/St Drive/Ilya_labs/1/3-5/CMakeLists.txt">
+		<Unit filename="/home/arseniy/Documents/ilya-labs/1/3-5/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

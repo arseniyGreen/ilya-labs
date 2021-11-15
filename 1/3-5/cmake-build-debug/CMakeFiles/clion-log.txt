@@ -1,4 +1,4 @@
-/app/extra/clion/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" "/run/media/notahacker/St Drive/Ilya_labs/1/3-5"
+/app/extra/clion/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/arseniy/Documents/ilya-labs/1/3-5
 -- The C compiler identification is GNU 10.2.0
 -- The CXX compiler identification is GNU 10.2.0
 -- Detecting C compiler ABI info
@@ -13,4 +13,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /run/media/notahacker/St Drive/Ilya_labs/1/3-5/cmake-build-debug
+-- Build files have been written to: /home/arseniy/Documents/ilya-labs/1/3-5/cmake-build-debug

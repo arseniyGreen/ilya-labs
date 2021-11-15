@@ -10,15 +10,15 @@
 template<class Type>
 void push(std::list<Type>& lst, Type element)
 {
-    typename std::list<Type>::iterator it = lst.begin();
+    typename std::list<Type>::iterator iter = lst.begin();
 
-    while(it != lst.end() && *it < element)
+    while(iter != lst.end() && *iter < element)
     {
-        if(*it > element) break;
+        if(*iter > element) break;
 
-        *it++;
+        *iter++;
     }
-    lst.insert(it, element);
+    lst.insert(iter, element);
 }
 
 template<class Type>
@@ -107,6 +107,7 @@ int main()
     std::list<int> secondList = filter(firstList, isPrime);
     std::cout << "\nОтфильтрованный список: \n";
     printList(secondList);
+    std::cout << "\n";
 
     return 0;
 }

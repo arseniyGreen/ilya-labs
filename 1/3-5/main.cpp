@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <cmath>
 
 using namespace std;
 
@@ -150,29 +151,17 @@ public:
     ListIterator(Element<ValueType>* p) { ptr = p; }
     ListIterator(const ListIterator& it) { ptr = it.ptr; }
 
-    ValueType getValue() const
-    { return ptr->getValue(); }
-
     bool operator!=(ListIterator const& other) const { return ptr->getValue() != other.ptr->getValue(); }
 
     bool operator==(ListIterator const& other) const { return ptr->getValue() == other.ptr->getValue(); }
+
+    ValueType getValue() const
+    { return ptr->getValue(); }
 
     Element<ValueType>& operator*()
     {
         if(ptr != nullptr) return *ptr;
         else cout << "\nNo iterator!\n";
-    }
-
-    Element<ValueType>& getNext() const
-    {
-        if (ptr != nullptr && *ptr->getNext() != nullptr) return *ptr->getNext();
-        else cout << "\nThere isn't next element!\n";
-    }
-
-    Element<ValueType>& getPrevious() const
-    {
-        if (ptr != nullptr && *ptr->getPrevious() != nullptr) return *ptr->getPrevious();
-        else cout << "\nThere isn't prev element!\n";
     }
 
     ListIterator& operator++()
@@ -252,9 +241,8 @@ public:
         }
         else
         {
-            Element<T>* oldTail = LinkedListParent<T>::tail;
-            oldTail->setNext(newElement);
-            newElement->setPrevious(oldTail);
+            LinkedListParent<T>::tail->setNext(newElement);
+            newElement->setPrevious(LinkedListParent<T>::tail);
             LinkedListParent<T>::tail = newElement;
             LinkedListParent<T>::num++;
         }
@@ -311,6 +299,7 @@ public:
             {
                 if (*newEl >= *it)
                 {
+                    //?
                     Element<T> curr = *it;
                     Element<T> prev = *it--;
 
@@ -347,17 +336,30 @@ public:
     }
 };
 
-//template<class T>
-//void filter(Stack<T>& stack, Stack<T>& newStack, bool (*predicate)(T))
-//{
-//    ListIterator it = stack.begin();
-//    while (it != stack.end())
-//    {
-//        if (predicate(it.getVal())) { newStack.push(*it); }
-//        *it++;
-//    }
-//    std::cout << "Filtering done!\n";
-//}
+template<class Type>
+bool isPrime(Type x)
+{
+    if(x < 2) return false;
+    if(x == 2) return true;
+    if(x % 2 == 0) return false;
+    for(size_t i = 3; pow(i, 2) < x; i+=2)
+    {
+        if(x % i == 0) return false;
+    }
+    return true;
+}
+
+template<class T>
+void filter(Queue<T>& queue, Queue<T>& newQueue, bool (*predicate)(T))
+{
+    ListIterator it = queue.begin();
+    while (it != queue.end())
+    {
+        if (predicate((*it).getValue())) { newQueue.push((*it).getValue()); }
+        *it++;
+    }
+    std::cout << "Filtering done!\n";
+}
 
 int main()
 {
@@ -368,13 +370,23 @@ int main()
     S.push(-10);
     S.push(62);
     S.push(-41);
+    S.push(13);
+    S.push(25);
+    S.push(31);
+    S.push(12);
+
     cout << "\n" << S;
     cout << "\n";
     Element<int>* e1 = S.pop();
     cout << "\nElement = " << e1->getValue() << "\n";
     cout << S;
-    cout << "\nIndex in the Stack class: " << S[1]->getValue() << "\n";
+    cout << "\nIndex in the Queue class: " << S[1]->getValue() << "\n";
     cout << S;
+
+    std::cout << "Filter test:\n";
+    Queue<int> filteredQueue;
+    filter(S, filteredQueue, isPrime);
+    std::cout << "Filtered queue : " << filteredQueue << "\n";
 
     OrderedQueue<int> q2;
     q2.push(-13);
