@@ -1,0 +1,3 @@
+C:/Users/Arseniy/Documents/GitHub/ilya-labs/2/234/cmake-build-debug/CMakeFiles/234.dir
+C:/Users/Arseniy/Documents/GitHub/ilya-labs/2/234/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Arseniy/Documents/GitHub/ilya-labs/2/234/cmake-build-debug/CMakeFiles/rebuild_cache.dir
