@@ -581,6 +581,210 @@ K searchByValue(AVL_Tree<K,V> tree, V value)
     throw std::runtime_error("\nError! No value found!");
 }
 
+template <class T>
+class HeapNode
+{
+private:
+    T value;
+public:
+    T getValue() { return value; }
+    void setValue(T v) { value = v; }
+    int operator<(HeapNode N)
+    {
+        return (value < N.getValue());
+    }
+    int operator>(HeapNode N)
+    {
+        return (value > N.getValue());
+    }
+    void print()
+    {
+        std::cout << value;
+    }
+};
+template <class T>
+void print(HeapNode<T>* N)
+{
+    std::cout << N->getValue() << "\n";
+}
+template <class T>
+class Heap
+{
+private:
+    HeapNode<T>* arr;
+    int len;
+    int size;
+public:
+    int getCapacity() { return size; }
+    int getCount() { return len; }
+    HeapNode<T>& operator[](int index)
+    {
+        if (index < 0 || index >= len)
+            return NULL;//?
+        return arr[index];
+    }
+    Heap<T>(int MemorySize = 100)
+    {
+        arr = new HeapNode<T>[MemorySize];
+        len = 0;
+        size = MemorySize;
+    }
+    void Swap(int index1, int index2)
+    {
+        if ((index1 >= 0 && index1 < len) && (index2 >= 0 && index2 < len))
+        {
+            HeapNode<T> temp;
+            temp = arr[index1];
+            arr[index1] = arr[index2];
+            arr[index2] = temp;
+        }
+    }
+    void Copy(HeapNode<T>* dest, HeapNode<T>* source)
+    {
+        dest->setValue(source->getValue());
+    }
+    HeapNode<T>* GetLeftChild(int index)
+    {
+        if (index < 0 || index * 2+2 >= len)
+            return NULL;
+        return &arr[index * 2 + 1];
+    }
+    HeapNode<T>* GetRightChild(int index)
+    {
+        if (index < 0 || index * 2+3 >= len)
+            return NULL;
+        return &arr[index * 2 + 2];
+    }
+    HeapNode<T>* GetParent(int index)
+    {
+        if (index <= 0 || index >= len)
+            return NULL;
+        if (index % 2 == 0)
+            return &arr[index / 2 - 1];
+        return &arr[index / 2];
+    }
+    int GetLeftChildIndex(int index)
+    {
+        if (index < 0 || index * 2+2 >= len)
+            return -1;
+        return index * 2 + 1;
+    }
+    int GetRightChildIndex(int index)
+    {
+        if (index < 0 || index * 2+3 >= len)
+            return -1;
+        return index * 2 + 2;
+    }
+    int GetParentIndex(int index)
+    {
+        if (index <= 0 || index >= len)
+
+            return -1;
+        if (index % 2 == 0)
+            return index / 2 - 1;
+        return index / 2;
+    }
+    void SiftUp(int index = -1)
+    {
+        if (index == -1) index = len - 1;
+        int parent = GetParentIndex(index);
+        int index2 = GetLeftChildIndex(parent);
+        if (index2 == index) index2 = GetRightChildIndex(parent);
+        int max_index = index;
+        if (index < len && index2 < len && parent >= 0)
+        {
+            if (arr[index] > arr[index2])
+                max_index = index;
+            if (arr[index] < arr[index2])
+                max_index = index2;
+        }
+        if (parent < len && parent >= 0 && arr[max_index]>arr[parent])
+        {
+            Swap(parent, max_index);
+            SiftUp(parent);
+        }
+    }
+    template <class T1>
+    void Add(T1 v)
+    {
+        HeapNode<T1>* N = new HeapNode<T1>;
+        N->setValue(v);
+        Add(N);
+    }
+    template <class T1>
+    void Add(HeapNode<T1>* N)
+    {
+        if (len < size)
+        {
+            Copy(&arr[len], N);
+            len++;
+            SiftUp();
+        }
+    }
+    void Straight(void(*f)(HeapNode<T>*))
+    {
+        int i;
+        for (i = 0; i < len; i++)
+        {
+            f(&arr[i]);
+        }
+    }
+    void InOrder(void(*f)(HeapNode<T>*), int index = 0)
+    {
+        if (GetLeftChildIndex(index) < len)
+            PreOrder(f, GetLeftChildIndex(index));
+        if (index >= 0 && index < len)
+            f(&arr[index]);
+        if (GetRightChildIndex(index) < len)
+            PreOrder(f, GetRightChildIndex(index));
+    }
+    T ExtractMax()
+    {
+        int max = 0;
+        T elem = arr[0].getValue();
+        while (1)
+        {
+            if ((GetLeftChild(max) != NULL) && (GetRightChild(max) != NULL))
+            {
+                if (GetLeftChild(max)->getValue() > GetRightChild(max)->getValue())
+                {
+                    Swap(max, GetLeftChildIndex(max));
+                    max = GetLeftChildIndex(max);
+
+                }
+                else
+                {
+                    Swap(max, GetRightChildIndex(max));
+                    max = GetRightChildIndex(max);
+
+                }
+            }
+            else if (GetLeftChild(max) != NULL)
+            {
+                Swap(max, GetLeftChildIndex(max));
+                max = GetLeftChildIndex(max);
+            }
+            if (max > len-1)
+            {
+                max = GetParentIndex(max);
+            }
+            if ((GetLeftChildIndex(max) == -1) && (GetRightChildIndex(max) == -1))
+            {
+                Swap(max, len - 1);
+                len--;
+                SiftUp(max);
+                break;
+            }
+        }
+        return elem;
+    }
+    ~Heap()
+    {
+        delete []arr;
+    }
+
+};
+
 int main()
 {
     Smartphone s21("Galaxy S21", 4, 2592000, 4000, 12, 63000);
@@ -625,6 +829,18 @@ int main()
     {
         std::cout << *T.iterator << " ";
         T.iterator++;
+    }
+
+    Heap<Smartphone> h;
+    h.Add(iphone13p);
+    h.Add(honor30i);
+    h.Add(pixel6);
+    h.Add(redminote10);
+    h.Add(s21);
+    while (h.getCount() != 0)
+    {
+        Smartphone tmp = h.ExtractMax();
+        std::cout << "Heap:" << tmp << std::endl;
     }
 
     return 0;
