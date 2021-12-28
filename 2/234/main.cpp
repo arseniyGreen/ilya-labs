@@ -425,8 +425,6 @@ class IteratedTree : public Tree<K, V>
 public:
     IteratedTree<K, V>() : Tree<K, V>() {}
 
-    TreeIterator<K, V> iterator;
-
     TreeIterator<K, V> begin() { TreeIterator<K, V> it = TreeIterator<K, V>(Tree<K, V>::Min()); return it; }
     TreeIterator<K, V> end() { TreeIterator<K, V> it = TreeIterator<K, V>(Tree<K, V>::Max()); return it; }
 };
@@ -824,11 +822,11 @@ int main()
     } catch(const std::runtime_error& e){ std::cout << e.what(); };
 
     std::cout << "\n-----\nIterators:";
-    T.iterator = T.Find_Left();
-    while (T.iterator != T.end())
+    TreeIterator<std::string, Smartphone> iterator = T.Find_Left();
+    while (iterator != T.end())
     {
-        std::cout << *T.iterator << " ";
-        T.iterator++;
+        std::cout << *iterator << " ";
+        *iterator++;
     }
 
     Heap<Smartphone> h;
