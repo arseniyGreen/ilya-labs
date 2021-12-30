@@ -412,6 +412,56 @@ public:
         return old;
     }
 
+    TreeIterator& operator--()
+    {
+        if (ptr->getLeft() != nullptr)
+        {
+            ptr = T->Max(ptr->getLeft());
+            return *this;
+        }
+        else
+        {
+            if (T->getKey(ptr) != T->getKey(T->Min()))
+            {
+                while (T->getKey(ptr->getParent()) > T->getKey(ptr))
+                {
+                    ptr = ptr->getParent();
+                }
+                ptr = ptr->getParent();
+                return *this;
+            }
+            else
+            {
+                return *this;
+            }
+        }
+    }
+
+    TreeIterator& operator--(int v)
+    {
+        if (ptr->getLeft() != NULL)
+        {
+            ptr = T->Max(ptr->getLeft());
+            return *this;
+        }
+        else
+        {
+            if (T->GetKey(ptr) != T->GetKey(T->Min()))
+            {
+                while (T->GetKey(ptr->getParent()) > T->GetKey(ptr))
+                {
+                    ptr = ptr->getParent();
+                }
+                ptr = ptr->getParent();
+                return *this;
+            }
+            else
+            {
+                return *this;
+            }
+        }
+    }
+
     ValueType getData(){ return ptr->getData(); }
     K getKey(){ return ptr->getKey(); }
 
